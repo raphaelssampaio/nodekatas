@@ -1,14 +1,3 @@
-/**
- * TheoryText
- *
- * Renders the `theory` field of an exercise with smart backtick-span
- * highlighting. Parsing is delegated to the shared `parseFormattedText`
- * utility which correctly handles:
- *   - Inline code spans:  `value`
- *   - Literal backtick display:  `` ` ``
- *   - Indented code-block lines (verbatim, backticks not treated as markup)
- */
-
 import React from "react";
 import { parseFormattedText } from "@/lib/parseFormattedText";
 
@@ -26,9 +15,7 @@ export const CODE_CLASS = [
 ].join(" ");
 
 interface TheoryTextProps {
-  /** The raw theory string, may contain `backtick-wrapped` code terms. */
   text: string;
-  /** Extra class names forwarded to the wrapping <p> element. */
   className?: string;
 }
 
@@ -51,7 +38,6 @@ export default function TheoryText({ text, className = "" }: TheoryTextProps) {
               </code>
             );
 
-          // literal-backtick and plain text → render as-is
           case "literal-backtick":
           case "text":
           default:
