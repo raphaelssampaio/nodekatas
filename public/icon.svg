@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background badge -->
+  <circle cx="256" cy="256" r="246" fill="#1a1a2e"/>
+
+  <!-- "{ }" — code -->
+  <g fill="none" stroke="#00ff88" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M156,168 C122,168 110,190 110,214 C110,236 100,246 76,256 C100,266 110,276 110,298 C110,322 122,344 156,344"/>
+    <path d="M196,168 C230,168 242,190 242,214 C242,236 252,246 276,256 C252,266 242,276 242,298 C242,322 230,344 196,344"/>
+  </g>
+
+  <!-- Katana — practice / kata -->
+  <g transform="rotate(18 350 256)" fill="#ffffff">
+    <path d="M350,116 L368,302 L350,316 L332,302 Z"/>
+    <rect x="316" y="298" width="68" height="12" rx="6"/>
+    <rect x="340" y="310" width="20" height="72" rx="8"/>
+    <circle cx="350" cy="388" r="10"/>
+  </g>
+</svg>

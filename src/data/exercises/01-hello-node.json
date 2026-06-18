@@ -1,0 +1,26 @@
+{
+  "id": "01-hello-node",
+  "trail": "zero",
+  "order": 1,
+  "title": {
+    "pt": "Seu primeiro módulo Node.js",
+    "en": "Your first Node.js module",
+    "es": "Tu primer módulo de Node.js",
+    "de": "Dein erstes Node.js-Modul",
+    "it": "Il tuo primo modulo Node.js",
+    "fr": "Ton premier module Node.js"
+  },
+  "theory": {
+    "pt": "O Node.js expõe variáveis globais que não existem no navegador. Uma delas é `process`, um objeto especial que fornece informações sobre o processo em execução. `process.version` retorna a versão do Node.js instalada na máquina, por exemplo `'v20.11.0'`. Diferente do `window` do browser, o `process` é exclusivo do ambiente Node.js e está disponível em qualquer arquivo sem precisar de `import` ou `require`.",
+    "en": "Node.js exposes global variables that don't exist in the browser. One of them is `process`, a special object that provides information about the running process. `process.version` returns the version of Node.js installed on the machine, for example `'v20.11.0'`. Unlike the browser's `window`, `process` is exclusive to the Node.js environment and is available in any file without needing an `import` or `require`.",
+    "es": "Node.js expone variables globales que no existen en el navegador. Una de ellas es `process`, un objeto especial que ofrece información sobre el proceso en ejecución. `process.version` devuelve la versión de Node.js instalada en la máquina, por ejemplo `'v20.11.0'`. A diferencia del `window` del navegador, `process` es exclusivo del entorno Node.js y está disponible en cualquier archivo sin necesidad de `import` o `require`.",
+    "de": "Node.js stellt globale Variablen bereit, die es im Browser nicht gibt. Eine davon ist `process`, ein spezielles Objekt, das Informationen über den laufenden Prozess liefert. `process.version` gibt die auf dem Rechner installierte Node.js-Version zurück, zum Beispiel `'v20.11.0'`. Anders als das `window` des Browsers ist `process` ausschließlich in der Node.js-Umgebung verfügbar und kann in jeder Datei genutzt werden, ohne dass ein `import` oder `require` nötig ist.",
+    "it": "Node.js espone variabili globali che non esistono nel browser. Una di queste è `process`, un oggetto speciale che fornisce informazioni sul processo in esecuzione. `process.version` restituisce la versione di Node.js installata sulla macchina, ad esempio `'v20.11.0'`. A differenza del `window` del browser, `process` è esclusivo dell'ambiente Node.js ed è disponibile in qualsiasi file senza bisogno di `import` o `require`.",
+    "fr": "Node.js expose des variables globales qui n'existent pas dans le navigateur. L'une d'elles est `process`, un objet spécial qui fournit des informations sur le processus en cours d'exécution. `process.version` renvoie la version de Node.js installée sur la machine, par exemple `'v20.11.0'`. Contrairement au `window` du navigateur, `process` est exclusif à l'environnement Node.js et est disponible dans n'importe quel fichier sans avoir besoin d'`import` ou de `require`."
+  },
+  "starter": "function getNodeVersion() {\n  return __fill_me__;\n}\n\nmodule.exports = { getNodeVersion };",
+  "solution": "function getNodeVersion() {\n  return process.version;\n}\n\nmodule.exports = { getNodeVersion };",
+  "tests": [
+    "expect(getNodeVersion()).toMatch(/^v/);"
+  ]
+}
