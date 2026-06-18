@@ -1,19 +1,29 @@
 /**
  * TheoryText
  *
- * Renders a plain-text string that may contain backtick-enclosed segments
- * (e.g. `process.version`) as styled inline code spans.
- *
- * Algorithm:
- *   1. Split the string on every backtick character.
- *   2. Odd-indexed chunks (1, 3, 5 …) are the "inside-backtick" segments.
- *   3. Even-indexed chunks (0, 2, 4 …) are regular prose text.
- *
- * The component preserves newlines via `whitespace-pre-wrap` on the
- * wrapping element so multi-paragraph theory texts still look correct.
+ * Renders the `theory` field of an exercise with smart backtick-span
+ * highlighting. Parsing is delegated to the shared `parseFormattedText`
+ * utility which correctly handles:
+ *   - Inline code spans:  `value`
+ *   - Literal backtick display:  `` ` ``
+ *   - Indented code-block lines (verbatim, backticks not treated as markup)
  */
 
 import React from "react";
+import { parseFormattedText } from "@/lib/parseFormattedText";
+
+export const CODE_CLASS = [
+  "font-mono",
+  "text-emerald-300",
+  "bg-gray-800",
+  "border border-gray-700",
+  "rounded",
+  "px-1 py-0.5",
+  "text-[0.8em]",
+  "leading-none",
+  "inline-block",
+  "align-baseline",
+].join(" ");
 
 interface TheoryTextProps {
   /** The raw theory string, may contain `backtick-wrapped` code terms. */
@@ -23,38 +33,30 @@ interface TheoryTextProps {
 }
 
 export default function TheoryText({ text, className = "" }: TheoryTextProps) {
-  const segments = text.split("`");
+  const tokens = parseFormattedText(text);
 
   return (
     <p
       className={`text-sm text-gray-300 leading-relaxed whitespace-pre-wrap ${className}`}
     >
-      {segments.map((segment, index) => {
-        const isCode = index % 2 === 1; // odd indices → inside backticks
+      {tokens.map((token, index) => {
+        switch (token.type) {
+          case "newline":
+            return <br key={index} />;
 
-        if (isCode) {
-          return (
-            <code
-              key={index}
-              className={[
-                "font-mono",
-                "text-emerald-300",
-                "bg-gray-800",
-                "border border-gray-700",
-                "rounded",
-                "px-1 py-0.5",
-                "text-[0.8em]",
-                "leading-none",
-                "inline-block",
-                "align-baseline",
-              ].join(" ")}
-            >
-              {segment}
-            </code>
-          );
+          case "code":
+            return (
+              <code key={index} className={CODE_CLASS}>
+                {token.value}
+              </code>
+            );
+
+          // literal-backtick and plain text → render as-is
+          case "literal-backtick":
+          case "text":
+          default:
+            return <React.Fragment key={index}>{token.value}</React.Fragment>;
         }
-
-        return <React.Fragment key={index}>{segment}</React.Fragment>;
       })}
     </p>
   );
