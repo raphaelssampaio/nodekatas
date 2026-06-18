@@ -8,6 +8,7 @@ import { useStore } from "@/lib/store";
 import { t } from "@/lib/i18n";
 import LanguageSelect from "@/components/LanguageSelect";
 import BuyMeACoffeeButton from "@/components/BuyMeACoffeeButton";
+import TheoryText from "@/components/TheoryText";
 import type { Exercise, Language } from "@/lib/types";
 
 interface RunResult {
@@ -95,12 +96,19 @@ export default function ExerciseClient({ exercise, nextExerciseId }: Props) {
 
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 overflow-hidden">
         <aside className="border-r border-gray-800 overflow-y-auto px-6 py-6 lg:block hidden">
+          <div className="mb-6 rounded-lg bg-gray-900 border border-emerald-800/60 px-4 py-4">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-emerald-500 mb-2">
+              {t(lang, "instructions")}
+            </h2>
+            <p className="text-sm text-gray-200 leading-relaxed">
+              {exercise.instructions[lang]}
+            </p>
+          </div>
+
           <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
             {t(lang, "theory")}
           </h2>
-          <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">
-            {exercise.theory[lang]}
-          </p>
+          <TheoryText text={exercise.theory[lang]} />
         </aside>
 
         <section className="flex flex-col border-r border-gray-800 overflow-hidden">

@@ -18,6 +18,14 @@
     "it": "Node.js espone variabili globali che non esistono nel browser. Una di queste è `process`, un oggetto speciale che fornisce informazioni sul processo in esecuzione. `process.version` restituisce la versione di Node.js installata sulla macchina, ad esempio `'v20.11.0'`. A differenza del `window` del browser, `process` è esclusivo dell'ambiente Node.js ed è disponibile in qualsiasi file senza bisogno di `import` o `require`.",
     "fr": "Node.js expose des variables globales qui n'existent pas dans le navigateur. L'une d'elles est `process`, un objet spécial qui fournit des informations sur le processus en cours d'exécution. `process.version` renvoie la version de Node.js installée sur la machine, par exemple `'v20.11.0'`. Contrairement au `window` du navigateur, `process` est exclusif à l'environnement Node.js et est disponible dans n'importe quel fichier sans avoir besoin d'`import` ou de `require`."
   },
+  "instructions": {
+    "en": "Implement the `getNodeVersion()` function so that it returns the current Node.js version string (e.g. `\"v20.11.0\"`). Use the global `process` object — no import needed.",
+    "pt": "Implemente a função `getNodeVersion()` para que ela retorne a string da versão do Node.js em execução (ex.: `\"v20.11.0\"`). Use o objeto global `process` — nenhum import é necessário.",
+    "es": "Implementa la función `getNodeVersion()` para que devuelva la cadena de versión de Node.js en ejecución (ej.: `\"v20.11.0\"`). Usa el objeto global `process` — no se necesita ningún import.",
+    "de": "Implementiere die Funktion `getNodeVersion()` so, dass sie den aktuellen Node.js-Versionsstring zurückgibt (z. B. `\"v20.11.0\"`). Verwende das globale Objekt `process` — kein Import nötig.",
+    "it": "Implementa la funzione `getNodeVersion()` in modo che restituisca la stringa della versione di Node.js in esecuzione (es. `\"v20.11.0\"`). Usa l'oggetto globale `process` — nessun import necessario.",
+    "fr": "Implémente la fonction `getNodeVersion()` pour qu'elle retourne la chaîne de version de Node.js en cours d'exécution (ex. : `\"v20.11.0\"`). Utilise l'objet global `process` — aucun import nécessaire."
+  },
   "starter": "function getNodeVersion() {\n  return __fill_me__;\n}\n\nmodule.exports = { getNodeVersion };",
   "solution": "function getNodeVersion() {\n  return process.version;\n}\n\nmodule.exports = { getNodeVersion };",
   "tests": [

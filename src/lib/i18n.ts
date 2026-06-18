@@ -3,6 +3,7 @@ import type { Language, Trail } from "@/lib/types";
 const STRINGS = {
   back: { en: "Back", pt: "Voltar", es: "Volver", de: "Zurück", it: "Indietro", fr: "Retour" },
   theory: { en: "Theory", pt: "Teoria", es: "Teoría", de: "Theorie", it: "Teoria", fr: "Théorie" },
+  instructions: { en: "Your Task", pt: "Sua Tarefa", es: "Tu Tarea", de: "Deine Aufgabe", it: "Il Tuo Compito", fr: "Ton Défi" },
   running: {
     en: "Running…",
     pt: "Executando…",

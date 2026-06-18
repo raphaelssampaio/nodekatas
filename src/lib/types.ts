@@ -22,6 +22,14 @@ export interface Exercise {
     it: string;
     fr: string;
   };
+  instructions: {
+    en: string;
+    pt: string;
+    es: string;
+    de: string;
+    it: string;
+    fr: string;
+  };
   starter: string;
   solution: string;
   tests: string[];
