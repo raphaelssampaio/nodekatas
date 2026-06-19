@@ -38,6 +38,8 @@ export default function TheoryText({ text, className = "" }: TheoryTextProps) {
               </code>
             );
 
+          case "bold":
+            return <strong key={index}>{token.value}</strong>;
           case "literal-backtick":
           case "text":
           default:

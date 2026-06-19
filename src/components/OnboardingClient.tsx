@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useStore, hasPersistedState } from "@/lib/store";
 import { t } from "@/lib/i18n";
+import BuyMeACoffeeButton from "@/components/BuyMeACoffeeButton";
 
 interface Props {
   firstExerciseId: string | null;
@@ -35,7 +36,11 @@ export default function OnboardingClient({ firstExerciseId }: Props) {
   if (!mounted) return null;
 
   return (
-    <main className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center px-6">
+    <main className="relative min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center px-6">
+      <div className="absolute top-4 right-4">
+        <BuyMeACoffeeButton />
+      </div>
+
       <h1 className="text-4xl font-bold tracking-tight mb-2">NodeKatas</h1>
       <p className="text-gray-400 mb-10 text-center max-w-md">
         {t(lang, "welcomeLine")}

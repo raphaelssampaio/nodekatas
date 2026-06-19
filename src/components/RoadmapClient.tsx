@@ -85,7 +85,7 @@ export default function RoadmapClient({ allExercises }: Props) {
   return (
     <main className="min-h-screen bg-gray-950 text-white">
       <header className="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
-        <span className="text-lg font-bold">Roadmap</span>
+        <span className="text-lg font-bold">NodeJS Katas</span>
 
         <div className="flex items-center gap-4">
           <button

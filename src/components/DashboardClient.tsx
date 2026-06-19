@@ -9,6 +9,7 @@ import {
   completedCount as formatCompletedCount,
   motivationalMessage,
 } from "@/lib/i18n";
+import BuyMeACoffeeButton from "@/components/BuyMeACoffeeButton";
 import type { Exercise, Trail } from "@/lib/types";
 
 interface Props {
@@ -75,6 +76,9 @@ export default function DashboardClient({ allExercises }: Props) {
         </button>
         <div className="h-4 w-px bg-gray-700" />
         <span className="text-lg font-bold">{t(lang, "statsTitle")}</span>
+        <div className="ml-auto flex items-center gap-3">
+          <BuyMeACoffeeButton />
+        </div>
       </header>
 
       <section className="max-w-5xl mx-auto px-6 py-10">
