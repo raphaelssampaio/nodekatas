@@ -19,12 +19,12 @@
     "fr": "Node.js expose des variables globales qui n'existent pas dans le navigateur. L'une d'elles est `process`, un objet spécial qui fournit des informations sur le processus en cours d'exécution. `process.version` renvoie la version de Node.js installée sur la machine, par exemple `'v20.11.0'`. Contrairement au `window` du navigateur, `process` est exclusif à l'environnement Node.js et est disponible dans n'importe quel fichier sans avoir besoin d'`import` ou de `require`."
   },
   "instructions": {
-    "en": "Implement the `getNodeVersion()` function so that it returns the current Node.js version string (e.g. `\"v20.11.0\"`). Use the global `process` object — no import needed.",
-    "pt": "Implemente a função `getNodeVersion()` para que ela retorne a string da versão do Node.js em execução (ex.: `\"v20.11.0\"`). Use o objeto global `process` — nenhum import é necessário.",
-    "es": "Implementa la función `getNodeVersion()` para que devuelva la cadena de versión de Node.js en ejecución (ej.: `\"v20.11.0\"`). Usa el objeto global `process` — no se necesita ningún import.",
-    "de": "Implementiere die Funktion `getNodeVersion()` so, dass sie den aktuellen Node.js-Versionsstring zurückgibt (z. B. `\"v20.11.0\"`). Verwende das globale Objekt `process` — kein Import nötig.",
-    "it": "Implementa la funzione `getNodeVersion()` in modo che restituisca la stringa della versione di Node.js in esecuzione (es. `\"v20.11.0\"`). Usa l'oggetto globale `process` — nessun import necessario.",
-    "fr": "Implémente la fonction `getNodeVersion()` pour qu'elle retourne la chaîne de version de Node.js en cours d'exécution (ex. : `\"v20.11.0\"`). Utilise l'objet global `process` — aucun import nécessaire."
+    "en": "Make `getNodeVersion()` return the Node.js version string of the runtime executing it, without importing anything.",
+    "pt": "Faça `getNodeVersion()` retornar a string de versão do Node.js do ambiente que a executa, sem importar nada.",
+    "es": "Haz que `getNodeVersion()` devuelva la cadena de versión de Node.js del entorno que la ejecuta, sin importar nada.",
+    "de": "Lass `getNodeVersion()` den Node.js-Versionsstring der Laufzeitumgebung zurückgeben, ohne irgendetwas zu importieren.",
+    "it": "Fai in modo che `getNodeVersion()` restituisca la stringa di versione di Node.js dell'ambiente che la esegue, senza importare nulla.",
+    "fr": "Faites en sorte que `getNodeVersion()` retourne la chaîne de version de Node.js de l'environnement qui l'exécute, sans rien importer."
   },
   "starter": "function getNodeVersion() {\n  return __fill_me__;\n}\n\nmodule.exports = { getNodeVersion };",
   "solution": "function getNodeVersion() {\n  return process.version;\n}\n\nmodule.exports = { getNodeVersion };",

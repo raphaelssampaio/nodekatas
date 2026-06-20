@@ -19,12 +19,12 @@
     "fr": "Le module `fs` (file system) est l'un des modules natifs de Node.js les plus utilisés. Il fournit des fonctions pour lire, écrire, renommer et supprimer des fichiers et des répertoires.\n\nIl existe deux versions de chaque opération :\n\n1. Synchrone (bloquante) : `fs.readFileSync(path, encoding)` — interrompt l'exécution jusqu'à ce que le fichier soit entièrement lu. Utile dans des scripts simples ou pendant le démarrage du processus.\n\n2. Asynchrone (non bloquante) : `fs.promises.readFile(path, encoding)` — renvoie une Promise qui se résout avec le contenu du fichier. Ne bloque pas la boucle d'événements, ce qui en fait le bon choix pour les serveurs et les applications en production.\n\nPasse toujours `'utf8'` comme encodage pour obtenir une chaîne lisible. Sans cela, tu recevras un `Buffer` (octets bruts).\n\nExemple avec async/await :\n\n  const fs = require('fs').promises;\n  const contenu = await fs.readFile('./fichier.txt', 'utf8');\n\nSi le fichier n'existe pas, la Promise est rejetée avec une erreur `ENOENT`. En production, encadre toujours les lectures de fichiers avec try/catch."
   },
   "instructions": {
-    "en": "Implement `readFileContent(path)` as an async function that reads the file at the given path and returns its content as a UTF-8 string. Use `fs.promises.readFile` — the `fs` module is already required at the top.",
-    "pt": "Implemente `readFileContent(path)` como uma função async que lê o arquivo no caminho dado e retorna seu conteúdo como string UTF-8. Use `fs.promises.readFile` — o módulo `fs` já está importado no topo.",
-    "es": "Implementa `readFileContent(path)` como una función async que lea el archivo en la ruta dada y devuelva su contenido como cadena UTF-8. Usa `fs.promises.readFile` — el módulo `fs` ya está requerido arriba.",
-    "de": "Implementiere `readFileContent(path)` als async-Funktion, die die Datei am angegebenen Pfad liest und deren Inhalt als UTF-8-String zurückgibt. Verwende `fs.promises.readFile` — das `fs`-Modul ist bereits oben eingebunden.",
-    "it": "Implementa `readFileContent(path)` come funzione async che legge il file al percorso dato e ne restituisce il contenuto come stringa UTF-8. Usa `fs.promises.readFile` — il modulo `fs` è già importato in cima.",
-    "fr": "Implémente `readFileContent(path)` comme une fonction async qui lit le fichier au chemin donné et retourne son contenu sous forme de chaîne UTF-8. Utilise `fs.promises.readFile` — le module `fs` est déjà requis en haut."
+    "en": "Make `readFileContent` read the file at the given path and resolve with its content as readable text, rather than raw bytes.",
+    "pt": "Faça `readFileContent` ler o arquivo no caminho fornecido e resolver com seu conteúdo como texto legível, em vez de bytes brutos.",
+    "es": "Haz que `readFileContent` lea el archivo en la ruta dada y resuelva con su contenido como texto legible, en lugar de bytes sin procesar.",
+    "de": "Lass `readFileContent` die Datei am angegebenen Pfad lesen und mit ihrem Inhalt als lesbarem Text auflösen, statt als rohe Bytes.",
+    "it": "Fai in modo che `readFileContent` legga il file al percorso dato e si risolva con il suo contenuto come testo leggibile, invece di byte grezzi.",
+    "fr": "Faites en sorte que `readFileContent` lise le fichier au chemin donné et se résolve avec son contenu sous forme de texte lisible, plutôt que d'octets bruts."
   },
   "starter": "const fs = require('fs').promises;\n\nasync function readFileContent(path) {\n  return __fill_me__;\n}\n\nmodule.exports = { readFileContent };",
   "solution": "const fs = require('fs').promises;\n\nasync function readFileContent(path) {\n  return fs.readFile(path, 'utf8');\n}\n\nmodule.exports = { readFileContent };",
